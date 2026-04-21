@@ -25,10 +25,10 @@ class ExpenseTracker:
         total_expenses = sum(expense["amount"] for expense in self.expenses)
         if total_expenses > self.budget:
             overspend = total_expenses - self.budget
-            print(f"⚠️ Budget Alert! Exceeded by ${overspend:.2f}")
+            print(f" Budget Alert! Exceeded by ${overspend:.2f}")
         else:
             remaining = self.budget - total_expenses
-            print(f"✅ Budget OK. Remaining: ${remaining:.2f}")
+            print(f" Budget OK. Remaining: ${remaining:.2f}")
 
     def view_expenses(self):
         if not self.expenses:
@@ -56,16 +56,16 @@ class ExpenseTracker:
 
 
 def main():
-    print("🤑 Expense Tracker with Budget Alerts 🚨")
+    print("Expense Tracker with Budget Alerts ")
     budget = float(input("Enter your monthly budget: $"))
     tracker = ExpenseTracker(budget)
 
     while True:
         print("\nOptions:")
-        print("1. ➕ Add Expense")
-        print("2. 📜 View Expenses")
-        print("3. 📊 View Summary")
-        print("4. ❌ Exit")
+        print("1. Add Expense")
+        print("2. View Expenses")
+        print("3. View Summary")
+        print("4. Exit")
         choice = input("Choose an option (1-4): ").strip()
 
         if choice == "1":
@@ -77,7 +77,7 @@ def main():
         elif choice == "3":
             tracker.view_summary()
         elif choice == "4":
-            print("Goodbye! 💸")
+            print("Goodbye! ")
             break
         else:
             print("Invalid choice. Try again.")
